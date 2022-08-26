@@ -92,23 +92,24 @@ img {
     font-size: 1rem;
   }
   .logoTopNav {
-    top: 10px;
+    top: 15px;
+  }
+  .topnav {
+    padding: 20px;
+    margin: 0;
+  }
+  .hero-headline {
+    font-size: 5rem;
   }
 }
 
 @media screen and (max-width: 769px) {
-  body {
-    margin: 25px;
-  }
   main {
     padding-left: inherit;
     margin: inherit;
   }
   .main-navbar {
     margin-right: 0px;
-  }
-  .topnav {
-    margin: 20px;
   }
   .topnav a {
     display: none;
@@ -149,6 +150,15 @@ img {
     float: right;
     display: block;
     margin-top: -15px;
+  }
+  .header-logo {
+    width: 50%;
+  }
+  .logoTopNav {
+    top: 0px;
+  }
+  .hero-content {
+    min-width: 0px;
   }
 }
 
