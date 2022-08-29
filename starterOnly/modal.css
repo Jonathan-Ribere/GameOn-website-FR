@@ -586,3 +586,8 @@ footer {
     opacity: 1;
   }
 }
+
+.error {
+  color: #d8000c;
+  background-color: #ffbaba;
+}

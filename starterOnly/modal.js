@@ -30,10 +30,19 @@ function closeModal() {
 
 // Fonction pour valider le formulaire
 function validate() {
-  if (document.reserve.first.value != "") {
+  /*if (document.reserve.first.value != "") {
     return true;
   } else {
-    alert("Saisissez le prénom");
+    alert("Saisissez un prénom valide : 2 caractère minimum");
     return false;
+  }*/
+  let first = document.forms["reserve"]["first"];
+  if (first.value == "") {
+    document.getElementById("errorfirst").innerHTML =
+      "Veuillez entrez un nom valide";
+    first.focus();
+    return false;
+  } else {
+    document.getElementById("errorfirst").innerHTML = "";
   }
 }
