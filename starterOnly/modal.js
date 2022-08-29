@@ -27,3 +27,13 @@ function launchModal() {
 function closeModal() {
   modalbg.style.display = "none";
 }
+
+// Fonction pour valider le formulaire
+function validate() {
+  if (document.reserve.first.value != "") {
+    return true;
+  } else {
+    alert("Saisissez le prénom");
+    return false;
+  }
+}
