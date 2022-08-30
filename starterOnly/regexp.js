@@ -13,10 +13,19 @@ form.email.addEventListener("change", function () {
   validMail(this);
 });
 
+// Ecouter la soumission du Formulaire
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (validName(form.first) && validName(form.last) && validMail(form.email)) {
+    form.submit();
+  }
+});
+
 //************ Validation Nom & Prenom ************/
 const validName = function (inputName) {
   // Création de la reg exp validation du nom & prénom
   let nameRegExp = new RegExp(/^[a-zA-Z\-]+$/);
+  let msg;
 
   // Recuperation de la balise Small
   let small = inputName.nextElementSibling;
@@ -26,10 +35,12 @@ const validName = function (inputName) {
     small.innerHTML = "Valide";
     small.classList.remove("text-danger");
     small.classList.add("text-success");
+    return true;
   } else {
-    small.innerHTML = "Invalide";
+    small.innerHTML = "Invalide - minimum de 2 caractères / n'est pas vide";
     small.classList.remove("text-success");
     small.classList.add("text-success");
+    return false;
   }
 };
 
@@ -45,12 +56,14 @@ const validMail = function (inputEmail) {
 
   // Test des expression reguliere
   if (emailRegExp.test(inputEmail.value)) {
-    small.innerHTML = "Valide";
+    small.innerHTML = "Adresse Email Valide";
     small.classList.remove("text-danger");
     small.classList.add("text-success");
+    return true;
   } else {
-    small.innerHTML = "Invalide";
+    small.innerHTML = "Adresse Email Invalide";
     small.classList.remove("text-success");
     small.classList.add("text-success");
+    return false;
   }
 };
