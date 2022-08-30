@@ -28,21 +28,63 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
+//////////////////////////////////////////////////////////////////////////
 // Fonction pour valider le formulaire
-function validate() {
-  /*if (document.reserve.first.value != "") {
-    return true;
+
+function errorMessage() {
+  e.preventDefault();
+  let error = document.getElementById("error");
+  if (isNaN(document.getElementById("first").value)) {
+    error.innerHTML = "<span style='color: red;'>" + "Nom invalide</span>";
   } else {
-    alert("Saisissez un prénom valide : 2 caractère minimum");
-    return false;
-  }*/
-  let first = document.forms["reserve"]["first"];
-  if (first.value == "") {
-    document.getElementById("errorfirst").innerHTML =
-      "Veuillez entrez un nom valide";
-    first.focus();
-    return false;
-  } else {
-    document.getElementById("errorfirst").innerHTML = "";
+    error.innerHTML = "";
   }
 }
+
+/*
+let contactForm = document.getElementById("formContact");
+ 
+
+contactForm.addEventListener(
+  "submit",
+  (e) => {
+    e.preventDefault();
+    fields.forEach((field) => {
+      resetField(field);
+    });
+    let valid = true;
+
+    fields.forEach((field) => {
+      if (!validateField(field)) {
+        valid = false;
+      }
+    });
+    if (valid) {
+      e.target.submit();
+    }
+  },
+  false
+);
+
+function validateField(field) {
+  if (field.checkValidity()) {
+    return true;
+  } else {
+    field.classList.add("invalid");
+    field.previousElementSibling.insertAdjacentHTML(
+      "beforeend",
+      `<span class="msg">${field.validationMessage}</span>`
+    );
+    return false;
+  }
+}
+
+function resetField(field) {
+  let fieldLabel = field.previousElementSibling;
+  field.classList.remove("invalid");
+  while (fieldLabel.firstElementChild) {
+    fieldLabel.removeChild(fieldLabel.firstElementChild);
+  }
+  field.valid = true;
+}
+*/
