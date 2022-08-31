@@ -67,3 +67,25 @@ const validMail = function (inputEmail) {
     return false;
   }
 };
+
+//*********** Checkbox condition  ***************/
+/*
+function validverifCheckboxate() {
+  let checkbox1 = document.getElementById("checkbox1");
+  if (checkbox1.checked) {
+    alert("checked");
+  } else {
+    alert("You didn't check it! Let me check it for you.");
+  }
+}
+*/
+function validverifCheckboxate() {
+  if (document.getElementById("checkbox1").checked) {
+    return true;
+  } else {
+    alert("please agree");
+    return false;
+  }
+}
+
+console.log(validverifCheckboxate);
