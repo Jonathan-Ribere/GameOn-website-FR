@@ -39,7 +39,7 @@ const validName = function (inputName) {
   } else {
     small.innerHTML = "Invalide - minimum de 2 caractères / n'est pas vide";
     small.classList.remove("text-success");
-    small.classList.add("text-success");
+    small.classList.add("text-danger");
     return false;
   }
 };
@@ -63,7 +63,7 @@ const validMail = function (inputEmail) {
   } else {
     small.innerHTML = "Adresse Email Invalide";
     small.classList.remove("text-success");
-    small.classList.add("text-success");
+    small.classList.add("text-danger");
     return false;
   }
 };
