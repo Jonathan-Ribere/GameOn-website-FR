@@ -16,7 +16,12 @@ form.email.addEventListener("change", function () {
 // Ecouter la soumission du Formulaire
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  if (validName(form.first) && validName(form.last) && validMail(form.email)) {
+  if (
+    validName(form.first) &&
+    validName(form.last) &&
+    validMail(form.email) &&
+    form.checkbox1.checked
+  ) {
     form.submit();
   }
 });
@@ -24,7 +29,7 @@ form.addEventListener("submit", function (e) {
 //************ Validation Nom & Prenom ************/
 const validName = function (inputName) {
   // Création de la reg exp validation du nom & prénom
-  let nameRegExp = new RegExp(/^[a-zA-Z\-]+$/);
+  let nameRegExp = new RegExp(/^[a-zA-Z\-]{2,}$/);
   let msg;
 
   // Recuperation de la balise Small
@@ -67,25 +72,3 @@ const validMail = function (inputEmail) {
     return false;
   }
 };
-
-//*********** Checkbox condition  ***************/
-/*
-function validverifCheckboxate() {
-  let checkbox1 = document.getElementById("checkbox1");
-  if (checkbox1.checked) {
-    alert("checked");
-  } else {
-    alert("You didn't check it! Let me check it for you.");
-  }
-}
-*/
-function validverifCheckboxate() {
-  if (document.getElementById("checkbox1").checked) {
-    return true;
-  } else {
-    alert("please agree");
-    return false;
-  }
-}
-
-console.log(validverifCheckboxate);
