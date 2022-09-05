@@ -13,6 +13,11 @@ form.email.addEventListener("change", function () {
   validMail(this);
 });
 
+// Ecouter la modification du nombre de tournoi
+form.quantity.addEventListener("change", function () {
+  validTournoi(this);
+});
+
 // Ecouter la soumission du Formulaire
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -20,6 +25,7 @@ form.addEventListener("submit", function (e) {
     validName(form.first) &&
     validName(form.last) &&
     validMail(form.email) &&
+    validTournoi(form.quantity) &&
     form.checkbox1.checked
   ) {
     form.submit();
@@ -43,6 +49,27 @@ const validName = function (inputName) {
     return true;
   } else {
     small.innerHTML = "Invalide - minimum de 2 caractères / n'est pas vide";
+    small.classList.remove("text-success");
+    small.classList.add("text-danger");
+    return false;
+  }
+};
+
+//************ Validation Tournoi ************/
+const validTournoi = function (inputTournoi) {
+  // Création de la reg exp validation Tournoi
+  let tournoiRegExp = new RegExp(/^(0|[1-9][0-9]?|100)$/);
+
+  // Recuperation de la balise Small
+  let small = inputTournoi.nextElementSibling;
+
+  if (tournoiRegExp.test(inputTournoi.value)) {
+    small.innerHTML = "Réponse Valide";
+    small.classList.remove("text-danger");
+    small.classList.add("text-success");
+    return true;
+  } else {
+    small.innerHTML = "Merci de choisir une réponse entre 0 et 99";
     small.classList.remove("text-success");
     small.classList.add("text-danger");
     return false;
