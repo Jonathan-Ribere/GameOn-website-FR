@@ -6,7 +6,8 @@
     top: 15px;
   }
   .topnav {
-    padding: 20px;
+    /*padding: 20px;*/
+    padding: 20px 20px 5px;
     margin: 0;
   }
   .hero-headline {
@@ -54,8 +55,26 @@
 }
 
 @media screen and (max-width: 769px) {
+  #myTop {
+    padding: 0;
+  }
+  .topnav.responsive {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
   main {
-    padding-left: inherit;
+    padding: 0px 20px;
     margin: inherit;
   }
   .main-navbar {
@@ -73,22 +92,6 @@
   }
   .hero-headline {
     padding: 0px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .topnav.responsive {
-    position: relative;
-  }
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
   }
 }
 
@@ -116,6 +119,8 @@
     display: none;
   }
   .topnav a.icon {
+    padding-right: 0px;
+    margin-right: 0px;
     float: right;
     display: block;
     margin-top: -15px;
