@@ -19,17 +19,20 @@ form.quantity.addEventListener("change", function () {
 });
 
 // Ecouter la soumission du Formulaire
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  let nom = document.getElementById("last").value;
+  let prenom = document.getElementById("first").value;
+  let merci = "Merci " + prenom + " pour votre inscription";
   if (
     validName(form.first) &&
     validName(form.last) &&
     validMail(form.email) &&
     validTournoi(form.quantity) &&
     form.checkbox1.checked
-  ) {
-    form.submit();
-  }
+  )
+    document.getElementById("formulaire").innerHTML = merci;
 });
 
 //************ Validation Nom & Prenom ************/
@@ -99,3 +102,11 @@ const validMail = function (inputEmail) {
     return false;
   }
 };
+
+function merci() {
+  let nom = document.getElementById("last").value;
+  let prenom = document.getElementById("first").value;
+  let merci = "Merci," + nom + prenom;
+
+  document.getElementById("formulaire").innerHTML = merci;
+}

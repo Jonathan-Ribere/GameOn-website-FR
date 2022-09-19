@@ -27,7 +27,3 @@ function launchModal() {
 function closeModal() {
   modalbg.style.display = "none";
 }
-
-function afficher() {
-  document.getElementById("merci").style.visibility = "visible";
-}
