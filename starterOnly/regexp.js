@@ -109,12 +109,4 @@ function merci() {
   let merci = "Merci," + nom + prenom;
 
   document.getElementById("formulaire").innerHTML = merci;
-  creatBtn();
-  <button>No text</button>;
 }
-
-const creatBtn = (text = "no text") => {
-  const btn = document.createElement("button");
-  btn.innerText = text;
-  return btn;
-};
